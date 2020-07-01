@@ -1,16 +1,12 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import theme from '../theme.js'
-import { ThemeProvider } from 'theme-ui'
-import { Heading, Text } from 'theme-ui'
-import Nav from './nav'
+import Nav from './nav.js'
 
-const name = 'Emily Malec Brown'
-export const siteTitle = 'Personal site and blog.'
+export const siteTitle = 'Emily Malec Brown personal site and blog.'
 
 export default function Layout ({ children, home }) {
   return (
-    <ThemeProvider theme={theme}>
+    <>
       <Head>
         <link rel='icon' href='/favicon.ico' />
         <meta name='description' content='Emily Malec Brown personal blog.' />
@@ -20,22 +16,7 @@ export default function Layout ({ children, home }) {
       </Head>
       <Nav />
 
-      <Heading>
-        {home ? (
-          <>
-            <Text>{name}</Text>
-          </>
-        ) : (
-          <>
-            <h2>
-              <Link href='/'>
-                <a>{name}</a>
-              </Link>
-            </h2>
-          </>
-        )}
-      </Heading>
-      <main>{children}</main>
+      <body className='container'>{children}</body>
       {!home && (
         <div>
           <Link href='/'>
@@ -43,6 +24,6 @@ export default function Layout ({ children, home }) {
           </Link>
         </div>
       )}
-    </ThemeProvider>
+    </>
   )
 }
