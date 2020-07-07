@@ -5,7 +5,7 @@ import { authenticate } from './authenticate'
 
 let cache = {}
 
-export const getWorkouts = async () => {
+export const getWorkouts = async limit => {
   if (!cache.sessionId) {
     console.log('setting cache')
 
@@ -14,11 +14,14 @@ export const getWorkouts = async () => {
     cache.sessionId = authentication.session_id
   }
 
-  const { data } = await axios.get(workouts(process.env.PELOTON_USER_ID), {
-    headers: {
-      cookie: `peloton_session_id=${cache.sessionId};`
+  const { data } = await axios.get(
+    workouts(process.env.PELOTON_USER_ID, limit),
+    {
+      headers: {
+        cookie: `peloton_session_id=${cache.sessionId};`
+      }
     }
-  })
+  )
 
   return data
 }

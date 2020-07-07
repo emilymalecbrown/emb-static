@@ -1,39 +1,38 @@
-import Head from 'next/head'
-import Layout, { siteTitle } from '../components/Layout'
 import { getSortedPostsData } from '../lib/posts'
 import Link from 'next/link'
 
 export default function Home ({ allPostsData }) {
   return (
-    <Layout home>
-      <Head>
-        <title>{siteTitle}</title>
-      </Head>
-      <section>
+    <div>
+      <div>
         Hello, I am <strong>Emily</strong>. I am currently employed as software
-        engineer at <a href={'https://www.glossier.com/'}>Glossier</a>. I am a
-        firm believer that a good developer is a curious person who is motivated
-        to build the thing. Gatekeeping in tech makes me sad, and as long as I'm{' '}
-        <i>here</i> I'll try to push up against it. I spend most of my time
-        replicating patterns I think are cool.
-      </section>
-      <section>
+        engineer at <a href={'https://www.glossier.com/'}>Glossier</a>. I don't
+        tweet, but I'm coming around to blogging.
+      </div>
+      <div className='py-4'>
         <h1>Blog posts</h1>
-        <ul>
-          {allPostsData.map(({ id, date, title }) => (
-            <li key={id}>
-              <Link href='/posts/[id]' as={`/posts/${id}`} key={id}>
-                {title}
-              </Link>{' '}
-              <br />
-              <small>
-                <div>{date}</div>
-              </small>
-            </li>
-          ))}
-        </ul>
-      </section>
-    </Layout>
+        <div className=''>
+          <ul>
+            {allPostsData.map(({ id, date, title }) => (
+              <div
+                className='max-w-sm w-full lg:max-w-full lg:flex divide-teal-400'
+                key={id}
+              >
+                <li>
+                  <Link href='/posts/[id]' as={`/posts/${id}`}>
+                    {title}
+                  </Link>{' '}
+                  <br />
+                  <small>
+                    <div>{date}</div>
+                  </small>
+                </li>
+              </div>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
   )
 }
 

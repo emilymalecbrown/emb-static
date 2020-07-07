@@ -1,10 +1,9 @@
 import Head from 'next/head'
-import Link from 'next/link'
 import Nav from './nav.js'
 
 export const siteTitle = 'Emily Malec Brown personal site and blog.'
 
-export default function Layout ({ children, home }) {
+export default function Layout ({ children }) {
   return (
     <>
       <Head>
@@ -14,16 +13,11 @@ export default function Layout ({ children, home }) {
         <meta name='og:title' content={siteTitle} />
         <meta name='twitter:card' content='summary_large_image' />
       </Head>
-      <Nav />
 
-      <body className='container'>{children}</body>
-      {!home && (
-        <div>
-          <Link href='/'>
-            <a>← Back to home</a>
-          </Link>
-        </div>
-      )}
+      <body>
+        <Nav />
+        <div className='container max-w-4xl mx-auto'>{children}</div>
+      </body>
     </>
   )
 }
