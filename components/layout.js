@@ -1,9 +1,9 @@
 import Head from 'next/head'
-import Nav from './Nav.js'
+import Nav from 'components/Nav'
 
 export const siteTitle = 'Emily Malec Brown personal site and blog.'
 
-export default function Layout ({ children }) {
+function Layout ({ children }) {
   return (
     <>
       <Head>
@@ -32,3 +32,5 @@ export default function Layout ({ children }) {
     </>
   )
 }
+
+export default Layout

@@ -1,6 +1,5 @@
-import WorkoutCard from '../components/WorkoutCard'
-
-import { getWorkouts } from './api/workouts'
+import WorkoutCard from 'components/WorkoutCard'
+import { getWorkouts } from 'pages/api/workouts'
 
 export default function Peloton ({ workoutData }) {
   return (

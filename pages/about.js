@@ -1,5 +1,5 @@
-import TimelineItem from '../components/TimelineItem'
-import timelineContent from '../components/timelineContent'
+import TimelineItem from 'components/TimelineItem'
+import timelineContent from 'components/timelineContent'
 
 export default () => {
   const renderTimelineContent = () =>

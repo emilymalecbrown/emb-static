@@ -1,5 +1,5 @@
-import { getSortedPostsData } from '../lib/posts'
-import PostCard from '../components/PostCard'
+import { getSortedPostsData } from 'lib/posts'
+import PostCard from 'components/PostCard'
 
 export default function Home ({ allPostsData }) {
   const renderRecentPosts = () =>
