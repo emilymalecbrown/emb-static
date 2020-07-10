@@ -17,8 +17,8 @@ export default () => (
 function NavItem ({ href, children }) {
   return (
     <Link href={href}>
-      <a className='p-2 hover:bg-blue-200 ml-2 md:ml-4'>
-        <u>{children}</u>
+      <a className='p-2 hover:bg-blue-200 ml-2 md:ml-4 underline'>
+        <span>{children}</span>
       </a>
     </Link>
   )

@@ -1,38 +1,29 @@
 import { getSortedPostsData } from '../lib/posts'
-import Link from 'next/link'
+import PostCard from '../components/PostCard'
 
 export default function Home ({ allPostsData }) {
+  const renderRecentPosts = () =>
+    allPostsData.map(({ id, date, title }) => (
+      <PostCard id={id} date={date} title={title} key={id} />
+    ))
+
   return (
-    <div>
-      <div>
-        Hello, I am <strong>Emily</strong>. I am currently employed as software
-        engineer at <a href={'https://www.glossier.com/'}>Glossier</a>. I don't
-        tweet, but I'm coming around to blogging.
-      </div>
-      <div className='py-4'>
-        <h1>Blog posts</h1>
-        <div className=''>
-          <ul>
-            {allPostsData.map(({ id, date, title }) => (
-              <div
-                className='max-w-sm w-full lg:max-w-full lg:flex divide-teal-400'
-                key={id}
-              >
-                <li>
-                  <Link href='/posts/[id]' as={`/posts/${id}`}>
-                    {title}
-                  </Link>{' '}
-                  <br />
-                  <small>
-                    <div>{date}</div>
-                  </small>
-                </li>
-              </div>
-            ))}
-          </ul>
-        </div>
-      </div>
-    </div>
+    <>
+      <h1>
+        Hello, I am <strong>Emily</strong>.{' '}
+        <span>
+          I am currently employed as software engineer at{' '}
+          <a className='underline' href={'https://www.glossier.com/'}>
+            Glossier, Inc
+          </a>{' '}
+          and sometimes I build stuff for fun. I don't tweet, but I'm coming
+          around to blogging.
+        </span>
+      </h1>
+      <hr className='my-8' />
+      <h2 className='text-lg'>Recent blog posts</h2>
+      <ul className='grid grid-cols-3 gap-4'>{renderRecentPosts()}</ul>
+    </>
   )
 }
 

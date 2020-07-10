@@ -10,7 +10,7 @@ function WorkoutCard ({ workout }) {
   )
 
   return (
-    <div className='mb-2 mx-2 w-1/3 shadow-lg'>
+    <div className='shadow-lg'>
       {workout.achievement_templates &&
         workout.achievement_templates.length > 0 &&
         workout.achievement_templates.map(achievement => (

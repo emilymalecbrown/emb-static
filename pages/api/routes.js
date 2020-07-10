@@ -1,4 +1,4 @@
-export const workouts = (userId, limit = 10, page = 0) =>
+export const workouts = (userId, limit = 15, page = 0) =>
   `https://api.onepeloton.com/api/user/${userId}/workouts?joins=peloton.ride&limit=${limit}&page=${page}&sort_by=-created`
 export const achievements = userId =>
   `https://api.onepeloton.com/api/user/${userId}/achievements`

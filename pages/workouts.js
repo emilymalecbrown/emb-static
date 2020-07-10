@@ -4,13 +4,15 @@ import { getWorkouts } from './api/workouts'
 
 export default function Peloton ({ workoutData }) {
   return (
-    <div>
+    <div className='my-8'>
       <div>
-        I love workout data. Peloton has been great for this because everything
-        has been tracked and I can pull the data and maniputate it myself.
+        I workout sometimes. Not only does it make me feel great, but it allows
+        me to set goals and track my progress. Peloton has been great for both
+        of these! Because it's API-driven I can pull the data and maniputate it
+        for myself.
       </div>
-      <h1>Here are some recent workouts I've done...</h1>
-      <div className='flex flex-wrap -mb-4 -mx-4'>
+      <h1 className='my-4'>Here are some recent workouts I've done...</h1>
+      <div className='grid grid-cols-3 gap-4'>
         {workoutData.map(workout => (
           <WorkoutCard key={workout.id} workout={workout} />
         ))}
@@ -20,7 +22,7 @@ export default function Peloton ({ workoutData }) {
 }
 
 export async function getStaticProps () {
-  const { data } = await getWorkouts(20)
+  const { data } = await getWorkouts()
 
   return {
     props: {
