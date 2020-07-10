@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import Nav from './nav.js'
+import Nav from './Nav.js'
 
 export const siteTitle = 'Emily Malec Brown personal site and blog.'
 

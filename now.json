@@ -1,7 +1,0 @@
-{
-  "env": {
-    "PELOTON_USER_ID": "@peloton-user-id",
-    "PELOTON_USERNAME": "@peloton-username",
-    "PELOTON_PASSWORD": "@peloton-password"
-  }
-}
