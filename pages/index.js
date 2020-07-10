@@ -21,7 +21,7 @@ export default function Home ({ allPostsData }) {
         </span>
       </h1>
       <hr className='my-8' />
-      <h2 className='text-lg'>Recent blog posts</h2>
+      <h2 className='text-lg my-4'>Recent blog posts</h2>
       <ul className='grid grid-cols-3 gap-4'>{renderRecentPosts()}</ul>
     </>
   )
