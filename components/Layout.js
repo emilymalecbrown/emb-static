@@ -27,7 +27,7 @@ function Layout ({ children }) {
           </div>
         </div>
         <Nav />
-        <div className='container max-w-4xl mx-auto px-8 md:px-0'>
+        <div className='container max-w-4xl mx-auto px-8 lg:px-0'>
           {children}
         </div>
       </body>

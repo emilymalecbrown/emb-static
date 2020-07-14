@@ -8,6 +8,7 @@ module.exports = {
   },
   variants: {},
   plugins: [
+    require('@tailwindcss/typography'),
     plugin(function ({ addBase, config }) {
       addBase({
         h1: {
@@ -24,6 +25,13 @@ module.exports = {
         },
         p: {
           marginTop: config('theme.margin.4')
+        },
+        pre: {
+          color: '#e5e7eb',
+          backgroundColor: '#252f3f',
+          padding: config('theme.padding.1'),
+          fontSize: config('theme.fontSize.md'),
+          borderRadius: '.375rem'
         }
       })
     })

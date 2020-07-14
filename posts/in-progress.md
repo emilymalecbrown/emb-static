@@ -1,6 +1,7 @@
 ---
 title: "Building my personal site and blog on Next.js"
 date: "2020-05-22"
+draft: true
 ---
 
 ### Choosing a theming / component library

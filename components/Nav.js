@@ -1,7 +1,7 @@
 import Link from 'next/link'
 
 export default () => (
-  <header className='max-w-4xl mb-4 mx-auto flex items-center justify-between py-6'>
+  <header className='max-w-4xl mx-auto flex items-center justify-between py-6'>
     <Link href='/'>
       <a className='font-bold text-lg'>Emily Malec Brown</a>
     </Link>

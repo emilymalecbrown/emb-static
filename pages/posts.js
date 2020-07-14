@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export default ({ allPostsData }) =>
   allPostsData.map(({ id, date, title }) => (
-    <div key={id}>
+    <h1 key={id}>
       <Link href='/posts/[id]' as={`/posts/${id}`}>
         <a>{title}</a>
       </Link>{' '}
@@ -11,7 +11,7 @@ export default ({ allPostsData }) =>
       <small>
         <div>{date}</div>
       </small>
-    </div>
+    </h1>
   ))
 
 export async function getStaticProps () {

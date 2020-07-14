@@ -7,9 +7,15 @@ export default function Post ({ postData }) {
       <Head>
         <title>{postData.title}</title>
       </Head>
-      <article>
-        <h1>{postData.title}</h1>
-        <div>{postData.date}</div>
+      <article className='mb-8 prose'>
+        <h1 className=''>{postData.title}</h1>
+        {postData.draft && (
+          <div className='inline-block bg-orange-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700'>
+            Draft
+          </div>
+        )}
+        <div className='text-gray-600'>{postData.date}</div>
+        <hr />
         <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
       </article>
     </>
