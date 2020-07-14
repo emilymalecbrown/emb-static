@@ -11,18 +11,20 @@ export default function Home ({ allPostsData }) {
     <>
       <h1>
         Hello, I am <strong>Emily</strong>.{' '}
-        <span>
-          I am currently employed as software engineer at{' '}
-          <a className='underline' href={'https://www.glossier.com/'}>
-            Glossier, Inc
-          </a>{' '}
-          and sometimes I build stuff for fun. I don't tweet, but I'm coming
-          around to blogging.
-        </span>
       </h1>
+      <h2>
+        I am currently employed as software engineer at{' '}
+        <a className='underline' href={'https://www.glossier.com/'}>
+          Glossier, Inc
+        </a>{' '}
+        and sometimes I build stuff for fun. I don't tweet, but I'm coming
+        around to blogging.
+      </h2>
       <hr className='my-8' />
       <h2 className='text-lg my-4'>Recent blog posts</h2>
-      <ul className='grid grid-cols-3 gap-4'>{renderRecentPosts()}</ul>
+      <ul className='grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-4'>
+        {renderRecentPosts()}
+      </ul>
     </>
   )
 }

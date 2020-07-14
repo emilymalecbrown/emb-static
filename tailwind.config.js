@@ -1,8 +1,31 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
 const defaultConfig = require('tailwindcss/defaultConfig')
+const plugin = require('tailwindcss/plugin')
 
 module.exports = {
-  theme: defaultTheme,
+  theme: {
+    ...defaultTheme
+  },
   variants: {},
-  plugins: []
+  plugins: [
+    plugin(function ({ addBase, config }) {
+      addBase({
+        h1: {
+          fontSize: config('theme.fontSize.xl'),
+          marginTop: config('theme.margin.6')
+        },
+        h2: {
+          fontSize: config('theme.fontSize.lg'),
+          marginTop: config('theme.margin.5')
+        },
+        h3: {
+          fontSize: config('theme.fontSize.md'),
+          marginTop: config('theme.margin.4')
+        },
+        p: {
+          marginTop: config('theme.margin.4')
+        }
+      })
+    })
+  ]
 }

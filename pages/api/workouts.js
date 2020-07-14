@@ -1,24 +1,16 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import axios from 'axios'
-import { workouts } from './routes'
-import { authenticate } from './authenticate'
-
-let cache = {}
+import { workouts } from 'pages/api/routes'
+import { authenticate } from 'pages/api/authenticate'
 
 export const getWorkouts = async limit => {
-  if (!cache.sessionId) {
-    console.log('setting cache')
-
-    const authentication = await authenticate()
-
-    cache.sessionId = authentication.session_id
-  }
+  const authentication = await authenticate()
 
   const { data } = await axios.get(
     workouts(process.env.PELOTON_USER_ID, limit),
     {
       headers: {
-        cookie: `peloton_session_id=${cache.sessionId};`
+        cookie: `peloton_session_id=${authentication.session_id};`
       }
     }
   )

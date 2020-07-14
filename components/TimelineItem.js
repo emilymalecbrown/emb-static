@@ -1,21 +1,21 @@
 function TimelineItem ({ title, content }) {
   return (
-    <li className='mb-2'>
-      <div className='flex items-center mb-1'>
-        <div className='bg-gray-500 rounded-full h-8 w-8' />
+    <li>
+      <div className='flex items-center'>
+        <div className='bg-gray-500 rounded-full h-8 w-8 mt-8' />
         {typeof title === 'string' ? (
-          <div
-            className='flex-1 ml-4 font-medium'
+          <h1
+            className='flex-1 ml-4 '
             dangerouslySetInnerHTML={{ __html: title }}
           />
         ) : (
-          <div className='flex-1 ml-4 font-medium'>{title}</div>
+          <h1 className='flex-1 ml-4 font-large'>{title}</h1>
         )}
       </div>
       {typeof content === 'string' ? (
-        <div className='ml-12' dangerouslySetInnerHTML={{ __html: content }} />
+        <p className='ml-12' dangerouslySetInnerHTML={{ __html: content }} />
       ) : (
-        <div className='ml-12'>{content}</div>
+        <p className='ml-12'>{content}</p>
       )}
     </li>
   )

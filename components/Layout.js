@@ -22,12 +22,14 @@ function Layout ({ children }) {
           <div className='flex'>
             <div className='py-2 h-6 w-6 mr-4'>🚧</div>
             <div>
-              <p className='text-md py-2'>Site under construction.</p>
+              <div className='text-md py-2'>Site under construction.</div>
             </div>
           </div>
         </div>
         <Nav />
-        <div className='container max-w-4xl mx-auto'>{children}</div>
+        <div className='container max-w-4xl mx-auto px-8 md:px-0'>
+          {children}
+        </div>
       </body>
     </>
   )

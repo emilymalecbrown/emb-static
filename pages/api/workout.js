@@ -1,21 +1,15 @@
 import axios from 'axios'
-import { singleWorkout, singleWorkoutPerformance } from './routes'
-import { authenticate } from './authenticate'
+import { singleWorkout, singleWorkoutPerformance } from 'pages/api/routes'
+import { authenticate } from 'pages/api/authenticate'
 
 let cache = {}
 
 export const getWorkout = async workoutId => {
-  if (!cache.sessionId) {
-    console.log('setting cache')
-
-    const authentication = await authenticate()
-
-    cache.sessionId = authentication.session_id
-  }
+  const authentication = await authenticate()
 
   const { data } = await axios.get(singleWorkout(workoutId), {
     headers: {
-      cookie: `peloton_session_id=${cache.sessionId};`
+      cookie: `peloton_session_id=${authentication.session_id};`
     }
   })
 
@@ -23,17 +17,11 @@ export const getWorkout = async workoutId => {
 }
 
 export const getWorkoutPerformance = async workoutId => {
-  if (!cache.sessionId) {
-    console.log('setting cache')
-
-    const authentication = await authenticate()
-
-    cache.sessionId = authentication.session_id
-  }
+  const authentication = await authenticate()
 
   const { data } = await axios.get(singleWorkoutPerformance(workoutId), {
     headers: {
-      cookie: `peloton_session_id=${cache.sessionId};`
+      cookie: `peloton_session_id=${authentication.session_id};`
     }
   })
 
