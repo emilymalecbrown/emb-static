@@ -3,7 +3,7 @@ import { getWorkouts } from 'pages/api/workouts'
 
 export default function Peloton ({ workoutData }) {
   return (
-    <div className='my-8'>
+    <div className='max-w-full mb-16 prose'>
       <p>
         I workout sometimes. Not only does it make me feel better, but I like
         setting goals and tracking my progress. Peloton has been great for both

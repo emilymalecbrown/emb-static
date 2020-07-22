@@ -2,8 +2,6 @@ import axios from 'axios'
 import { singleWorkout, singleWorkoutPerformance } from 'pages/api/routes'
 import { authenticate } from 'pages/api/authenticate'
 
-let cache = {}
-
 export const getWorkout = async workoutId => {
   const authentication = await authenticate()
 

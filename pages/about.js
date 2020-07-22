@@ -8,22 +8,18 @@ export default () => {
     ))
 
   return (
-    <>
+    <div className='prose mb-16'>
       <p className='m-0'>
-        What I've been working on the past few years. A more formal resume can
-        be{' '}
-        <a className='underline' href={'./files/resume.pdf'}>
-          downloaded here
-        </a>
-        .
+        Here's some of what I've been working on the past few years. Theres been
+        a lot of life stuff in here too!
       </p>
       <div className='relative mt-4 mb-8'>
         <div
           className='border-r-2 border-gray-500 absolute h-full'
-          style={{ left: '15px', top: '15px' }}
+          style={{ left: '15px', top: '15px', paddingLeft: '1.75em' }}
         />
         <ul className='list-none m-0 p-0'>{renderTimelineContent()}</ul>
       </div>
-    </>
+    </div>
   )
 }
