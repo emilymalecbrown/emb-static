@@ -4,11 +4,13 @@ date: "2020-07-10"
 draft: true
 ---
 
-Slightly embarassed to admit it, but I was part of the wave of Peloton purchasers during quarantine. It was getting difficult to motivate to run outside with a mask, and my (then fiance, now husband) promised to also use it! I wasn't sure exactly what I was getting into, but was surprised to find that one of the most exciting aspects of the bike / app was all the data it provides about your rides. On Reddit, I saw that some people were pulling data from the Peloton API to and decided it would be fun to try it out for myself.
+Slightly embarassed to admit it, but I was part of the wave of Peloton purchasers during quarantine. It was getting difficult to motivate to run outside with a mask, and my (then fiancé, now husband) promised to also use it! 
+
+I wasn't sure exactly what I was getting into, but was surprised to find that one of the most exciting aspects of the bike / app was all the data it provides about your rides. On Reddit, I saw that some people were pulling data from the Peloton API to and decided it would be fun to try it out for myself.
 
 ## The API
 
-In doing my research I discovered the API documented very thoroughly on [Swagger](https://app.swaggerhub.com/apis/DovOps/peloton-unofficial-api/0.2.3#/)! I wasn't familiar with Swagger before and this was a great
+In doing my research I discovered the API documented very thoroughly on [Swagger](https://app.swaggerhub.com/apis/DovOps/peloton-unofficial-api/0.2.3#/)! I wasn't familiar with Swagger before and this was a great resource in learning about the API. 
 
 
 ## Getting a workout
@@ -71,7 +73,7 @@ WorkoutCard.propTypes = {
         slug: PropTypes.string
       })
     ),
-    // more stuff
+    // lots more data
   })
 }
 ```
