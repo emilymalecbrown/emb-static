@@ -8,7 +8,7 @@ export default () => {
     ))
 
   return (
-    <div className='prose mb-16'>
+    <div className='prose mb-16 mx-auto'>
       <p className='m-0'>
         Here's some of what I've been working on the past few years. Theres been
         a lot of life stuff in here too!

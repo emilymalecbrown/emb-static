@@ -7,7 +7,7 @@ export default function Post ({ postData }) {
       <Head>
         <title>{postData.title}</title>
       </Head>
-      <article className='mb-8 prose'>
+      <article className='mb-8 prose mx-auto'>
         <h1 className=''>{postData.title}</h1>
         {postData.draft && (
           <div className='inline-block bg-orange-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700'>
