@@ -4,8 +4,6 @@ date: "2020-09-06"
 draft: true
 ---
 
-### A story of minor automation success
-
 I am currently living on an island. No bridges. Just a ferry to get off 🚢
 
 I recently needed to book the ferry to get off the island, but there was no car availability. Some things caught my eye as I was going through the checkout: 
@@ -27,7 +25,11 @@ I had pretty basic requirements for this project.
 
 ### Pipedream
 
-So, after some quick Google searches I came across this cool app called [Pipedream](https://pipedream.com/). It allows you to create "Workflows" with different steps, where you can pass data along to each subsequent step. In this case my steps were: cron job => trigger lambda like function => send text to me! 
+So, after some quick Google searches I came across this cool app called [Pipedream](https://pipedream.com/). It allows you to create "Workflows" with different steps, where you can pass data along to each subsequent step. In this case my steps were:
+
+cron job => trigger lambda like function => send text to me! 
+
+### Building it out
 
 When creating a new Workflow in Pipedream a cron scheduler is one of the default options, so ✅
 
@@ -66,11 +68,11 @@ async (event, steps) => {
 
 One interesting piece about this code is the return statement. The `data` returned from this function is passed along to the next step. In my case, this step was a block of code with a Twilio integration. 
 
-Pipedream makes it super easy to set up with your Twilio account. Most of the code below is boilerplate except for 
+Pipedream makes it super easy to set up with your Twilio account. Most of the code below is boilerplate except for:
 
 `if (!steps.nodejs.$return_value.data) return;` 
 
-This line prevented me from getting texted if a ferry was _not_ available. 
+This line uses the data returned from the previous step, and also prevented me from getting texted if a ferry was _not_ available. 
 
 ```js
 async (event, steps) => {
