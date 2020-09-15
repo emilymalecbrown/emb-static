@@ -1,7 +1,6 @@
 ---
 title: "Building my personal site and blog on Next.js"
 date: "2020-05-22"
-draft: true
 ---
 
 ### Next.js
@@ -16,7 +15,7 @@ Some great of the great things about static site generation for this site are:
 
 2. I wanted to add some data that requires API calls with secrets (my peloton username and password), and those calls are made at build time. Don't have to worry about doing anything fancy to obscure them. There is zero configuration to use `process.env` variables once you've added them to the project the Vercel interface or CLI.
 
-3. It's fun and new. The APIs are well written and there is a vibrant open source community. I'd love to contribute to the project at some point.
+3. It's fun and new. The APIs are well written and there is a really active and interested open-source community. I'd love to contribute to the project at some point.
 
 ### Adding Domains / Vercel
 
