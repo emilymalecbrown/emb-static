@@ -1,7 +1,12 @@
 {
-  "name": "my-app",
+  "name": "emb-static",
   "version": "0.1.0",
   "private": true,
+  "author": {
+    "name": "Emily Malec Brown",
+    "email": "emilymalecbrown@gmail.com",
+    "url": "https://www.emilymalecbrown.com"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
