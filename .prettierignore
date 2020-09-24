@@ -1,2 +1,6 @@
 *.md
 *.mdx
+.next
+.vscode
+public
+node_modules

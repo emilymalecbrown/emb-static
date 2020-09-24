@@ -1,7 +1,7 @@
-import Head from "next/head";
-import Nav from "components/Nav";
+import Head from 'next/head'
+import Nav from 'components/Nav'
 
-export const siteTitle = "Emily Malec Brown personal site and blog.";
+export const siteTitle = 'Emily Malec Brown personal site and blog.'
 
 function Layout({ children }) {
   return (
@@ -16,12 +16,12 @@ function Layout({ children }) {
 
       <body>
         <Nav />
-        <div className="container max-w-4xl mx-auto px-8 lg:px-0">
+        <div className="container max-w-4xl mx-auto p-8 lg:px-0">
           {children}
         </div>
       </body>
     </>
-  );
+  )
 }
 
-export default Layout;
+export default Layout

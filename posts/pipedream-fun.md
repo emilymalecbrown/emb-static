@@ -9,8 +9,8 @@ I am currently living on an island. No bridges. Just a ferry to get off 🚢
 I recently needed to book the ferry to get off the island, but there was no car availability. Some things caught my eye as I was going through the checkout: 
 
 1. The reservation system issues you a reservation id before you book the ferry. 
-2. The url to check availability can be hit over and over with that reservation id (session doesn't expire).
-3. The availability of ferrys was changing quickly. 
+2. The url to check availability can be hit over and over with that reservation id (session doesn't expire quickly).
+3. The availability of ferries was changing quickly. 
 
 I had written a cron-job to check for product availablity on a site awhile back, and decided this would be another good usecase. 
 
@@ -68,11 +68,15 @@ async (event, steps) => {
 
 One interesting piece about this code is the return statement. The `data` returned from this function is passed along to the next step. In my case, this step was a block of code with a Twilio integration. 
 
-Pipedream makes it super easy to set up with your Twilio account. Most of the code below is boilerplate except for:
+### Twilio
+
+Pipedream makes it super easy to set up with your Twilio account. Just need to add your secrets (via their interface).
+
+Most of the code below is boilerplate except for:
 
 `if (!steps.nodejs.$return_value.data) return;` 
 
-This line uses the data returned from the previous step, and also prevented me from getting texted if a ferry was _not_ available. 
+This line uses the data returned from the previous step, and served to prevent me from getting texted if a ferry was **not** available. 
 
 ```js
 async (event, steps) => {

@@ -4,8 +4,8 @@ const plugin = require('tailwindcss/plugin')
 
 module.exports = {
   theme: {
-    ...defaultTheme
+    ...defaultTheme,
   },
   variants: {},
-  plugins: [require('@tailwindcss/typography')]
+  plugins: [require('@tailwindcss/typography')],
 }

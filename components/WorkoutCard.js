@@ -1,36 +1,36 @@
 import PropTypes from 'prop-types'
 
-function WorkoutCard ({ workout }) {
+function WorkoutCard({ workout }) {
   const { is_total_work_personal_record: pr, fitness_discipline } = workout
 
   const renderDiscipline = () => (
-    <span className='inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700'>
+    <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700">
       #{fitness_discipline}
     </span>
   )
 
   return (
-    <div className='shadow-lg'>
+    <div className="shadow-lg">
       {workout.achievement_templates &&
         workout.achievement_templates.length > 0 &&
-        workout.achievement_templates.map(achievement => (
+        workout.achievement_templates.map((achievement) => (
           <img
-            className='w-full'
+            className="w-full"
             src={achievement.image_url}
             alt={achievement.description}
           />
         ))}
-      <div className='px-6 py-4'>
-        <div className='font-bold text-xl mb-2'>
+      <div className="px-6 py-4">
+        <div className="font-bold text-xl mb-2">
           {workout.peloton.ride.title}
         </div>
-        <p className='text-gray-700 text-base'>
+        <p className="text-gray-700 text-base">
           {workout.peloton.ride.description}
         </p>
       </div>
-      <div className='px-6 py-4'>
+      <div className="px-6 py-4">
         {pr && (
-          <span className='inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2'>
+          <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">
             #personalbest
           </span>
         )}
@@ -48,7 +48,7 @@ WorkoutCard.propTypes = {
         id: PropTypes.string,
         image_url: PropTypes.string,
         name: PropTypes.string,
-        slug: PropTypes.string
+        slug: PropTypes.string,
       })
     ),
     created: PropTypes.number,
@@ -62,7 +62,7 @@ WorkoutCard.propTypes = {
     ftp_info: PropTypes.shape({
       ftp: PropTypes.number,
       ftp_source: PropTypes.any,
-      ftp_workout_id: PropTypes.any
+      ftp_workout_id: PropTypes.any,
     }),
     has_leaderboard_metrics: PropTypes.bool,
     has_pedaling_metrics: PropTypes.bool,
@@ -132,7 +132,7 @@ WorkoutCard.propTypes = {
         total_ratings: PropTypes.number,
         total_workouts: PropTypes.number,
         vod_stream_id: PropTypes.string,
-        vod_stream_url: PropTypes.string
+        vod_stream_url: PropTypes.string,
       }),
       ride_id: PropTypes.string,
       scheduled_start_time: PropTypes.any,
@@ -141,7 +141,7 @@ WorkoutCard.propTypes = {
       start_time: PropTypes.number,
       status: PropTypes.string,
       total_home_reservations: PropTypes.number,
-      total_workouts: PropTypes.number
+      total_workouts: PropTypes.number,
     }),
     peloton_id: PropTypes.string,
     platform: PropTypes.string,
@@ -200,7 +200,7 @@ WorkoutCard.propTypes = {
       total_ratings: PropTypes.number,
       total_workouts: PropTypes.number,
       vod_stream_id: PropTypes.string,
-      vod_stream_url: PropTypes.any
+      vod_stream_url: PropTypes.any,
     }),
     start_time: PropTypes.number,
     status: PropTypes.string,
@@ -224,11 +224,11 @@ WorkoutCard.propTypes = {
       total_pedaling_metric_workouts: PropTypes.number,
       total_workouts: PropTypes.number,
       username: PropTypes.string,
-      workout_counts: PropTypes.any
+      workout_counts: PropTypes.any,
     }),
     user_id: PropTypes.string,
-    workout_type: PropTypes.string
-  })
+    workout_type: PropTypes.string,
+  }),
 }
 
 export default WorkoutCard

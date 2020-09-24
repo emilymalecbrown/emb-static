@@ -5,7 +5,7 @@ export const authenticate = async () => {
     'https://api.onepeloton.com/auth/login',
     JSON.stringify({
       username_or_email: process.env.PELOTON_USERNAME,
-      password: process.env.PELOTON_PASSWORD
+      password: process.env.PELOTON_PASSWORD,
     })
   )
   return response.data
