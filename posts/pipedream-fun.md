@@ -1,10 +1,9 @@
 ---
 title: "A story of minor automation success"
 date: "2020-09-06"
-draft: true
 ---
 
-I am currently living on an island. No bridges. Just a ferry to get off 🚢
+I am currently living on an island. No bridges. Just a ferry to get off  🚢
 
 I recently needed to book the ferry to get off the island, but there was no car availability. Some things caught my eye as I was going through the checkout: 
 
@@ -12,7 +11,7 @@ I recently needed to book the ferry to get off the island, but there was no car 
 2. The url to check availability can be hit over and over with that reservation id (session doesn't expire quickly).
 3. The availability of ferries was changing quickly. 
 
-I had written a cron-job to check for product availablity on a site awhile back, and decided this would be another good usecase. 
+I had written a cron-job to check for product availablity on Costco's site awhile back, and decided this would be another good usecase for a quick little webscraping script. 
 
 ### Goals
 
@@ -20,25 +19,27 @@ I had pretty basic requirements for this project.
 
 - Checks the ferry availability every 3 minutes 
 - Sends me a text as soon as something becomes available
-- Free
 - Code takes me less than 15 minutes to write
+- Free
 
 ### Pipedream
 
-So, after some quick Google searches I came across this cool app called [Pipedream](https://pipedream.com/). It allows you to create "Workflows" with different steps, where you can pass data along to each subsequent step. In this case my steps were:
+After some quick Google searches I came across this cool tool called [Pipedream](https://pipedream.com/). It allows you to create _Workflows_ with different steps (sequential functions), where you can pass data returned from a step in the sequence to the next step. In this case my steps were:
 
-cron job => trigger lambda like function => send text to me! 
+1. Run a cron job
+2. Trigger lambda like function that scrapes the HTML on the ferry reservation page 
+3. Send text to me if a spot at my desired times were available 
 
 ### Building it out
 
-When creating a new Workflow in Pipedream a cron scheduler is one of the default options, so ✅
+When creating a new Workflow in Pipedream a cron scheduler is one of the default options. It allows you to set the schedule where your workflow will be triggered.
 
-I then had to add my next step - which in Pipedream was called "Run some Node.js code". Pipedream's Node environment allows you to use any NPM package without any additional work. I used two libraries: 
+I then had to add my next step - which in Pipedream was called _Run some Node.js code_. This is where I performed the HTML scaping. Pipedream's Node environment allows you to use any NPM package without any additional work. I used two libraries: 
 
-axios - to make the HTTP request to fetch the ferry page 
-node-html-parser - allowed me to parse the html to make some queries*
+- `axios`: to make the HTTP request to fetch the ferry reservation page 
+- `node-html-parser` - allows for easy parsing of the html from the reservation page 
 
-The code looked like this (no judgement - my requirement was less than 15 minutes!):
+The code looked like this (no judgement - met the 15 minutes requirement):
 
 ```js
 async (event, steps) => {
@@ -66,13 +67,13 @@ async (event, steps) => {
 }
 ```
 
-One interesting piece about this code is the return statement. The `data` returned from this function is passed along to the next step. In my case, this step was a block of code with a Twilio integration. 
+The notable piece about this code is the return statement. The `data` returned from this function is passed along to the next step. This would allow the next step to have awareness of whether the ferry was available or not. In this case, the step was a block of code with a Twilio integration. 
 
 ### Twilio
 
-Pipedream makes it super easy to set up with your Twilio account. Just need to add your secrets (via their interface).
+Pipedream makes it super easy to set up with your Twilio account. It sets you up with boilerplate code and you just need to add your secrets (via their interface).
 
-Most of the code below is boilerplate except for:
+All of the code pasted below is their boilerplate except for:
 
 `if (!steps.nodejs.$return_value.data) return;` 
 
@@ -120,4 +121,5 @@ async (event, steps) => {
 }
 ```
 
-And there you have it! This was a story of success -- I did end up getting the text, and did end up booking the ferry. Happy days. 
+And there you have it! This was a story of success - I did end up getting the text, and did end up booking the ferry. Happy days. I did feel slightly guilty when I realized I had built a mechanism that was faster, and allowed me to beat out, people in the ferry's own waitlist system. 
+

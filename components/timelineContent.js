@@ -12,13 +12,13 @@ export default [
     title:
       'October 2016 - Graduated Grace Hopper Program at Fullstack Academy - New York, NY',
     content:
-      'Right after graduating from university, I moved to New York and to study "coding". I had done some programming on the side for fun and to automate some menial tasks in my retail job. I knew it was something I liked, and wanted to learn more.',
+      'In school I had done some programming for fun and to automate some menial tasks in my retail job. I decided mid-senior year that I wanted to try it as a career, and I moved to New York and to get some formal training at Grace Hopper. It was nervewracking and exciting, and I learned a ton.',
   },
   {
     title:
       'October 2016 to March 2017 - Teaching Fellow at the Grace Hopper Program - New York, NY',
     content:
-      'After graduating, I stayed at Grace Hopper as an employee and mentored students learning JavaScript in CS fundamentals and web development.',
+      'After graduating I stayed on at Grace Hopper as an employee and mentored students learning JavaScript in CS fundamentals and web development. I have taught a few evening courses for beginners at Fullstack since then.',
   },
   {
     title:
@@ -34,8 +34,14 @@ export default [
   },
   {
     title:
-      'September 2019 to now - Software Engineer at <a class="underline" href="https://www.glossier.com">Glossier, Inc.</a> - Remote from San Francisco',
+      'September 2019 to November 2020 - Software Engineer at <a class="underline" href="https://www.glossier.com">Glossier, Inc.</a> - Remote from San Francisco',
     content:
-      'I currently work at Glossier, Inc. I am primarily working on AWS services that power our growing e-commerce site.',
+      'At Glossier I primarily worked on back-end AWS services. I led development on our promotions service (think: sales, coupon codes, free gifts), and learned a bunch about Lambda, DynamoDB, and SQS. Dabbled in  front-end, too, notably building our company blog. Generally tried to hop in where I was needed. Fought many fires.',
+  },
+  {
+    title:
+      'December 2020 to present - Senior Software Engineer at <a class="underline" href="https://www.hopper.com">Hopper, Inc.</a> - New York, NY',
+    content:
+      'At Hopper, I am building web components and applications to power our b2b business. Currently digging type-safe React, and trying to dive deeper into web performance and find optimization opportunities.',
   },
 ]

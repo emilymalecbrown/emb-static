@@ -3,8 +3,6 @@ title: "Building my personal site and blog on Next.js"
 date: "2020-05-22"
 ---
 
-### Next.js
-
 This is my second exploration with Next.js - the first was when Vercel was still Zeit. I started with the [demo here](https://github.com/vercel/next-learn-starter/tree/master/demo) and built from there.
 
 I haven't done much customization on top of this!

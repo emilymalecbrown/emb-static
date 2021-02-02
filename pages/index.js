@@ -11,12 +11,11 @@ export default function Home({ allPostsData }) {
     <div className="max-w-full mb-16 prose">
       <p>Hi, I'm Emily. 👋</p>
       <p>
-        I am currently employed as software engineer at{' '}
-        <a className="underline" href={'https://www.glossier.com/'}>
-          Glossier, Inc
-        </a>{' '}
-        and sometimes I build stuff for fun. I don't tweet, but I'm coming
-        around to blogging.
+        I am currently employed as Senior Software Engineer at{' '}
+        <a className="underline" href={'https://www.hopper.com/'}>
+          Hopper, Inc
+        </a>
+        . I don't tweet, but I'm coming around to blogging.
       </p>
       <hr className="my-8" />
       <h2 className="text-lg my-4">Recent blog posts</h2>

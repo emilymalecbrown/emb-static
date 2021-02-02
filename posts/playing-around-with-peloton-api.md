@@ -3,19 +3,19 @@ title: "Playing around with the Peloton API"
 date: "2020-07-10"
 ---
 
-Slightly embarassed to admit it, but I was part of the wave of Peloton purchasers during quarantine*. It was getting difficult to run safely distanced from others or with a mask, and my (then fiancé, now husband) promised to also use it. Exercise my primary tool for managing stress, and something I am willing to invest in. So far, it has turned out to be a great investment.
+Slightly embarassed to admit it, but I was part of the wave of Peloton purchasers during quarantine. It was getting difficult to run safely distanced from others and with a mask, and my (then fiancé, now husband) promised he would use it as well. Exercise is my primary tool for managing stress, and the Peloton quickly proved to be a great way to channel the anxious engery that abounds during this time. 
 
-I was surprised to find that one of the most motivating aspects of the bike and app was all the data it provides about your workouts. On Reddit, I saw that some people were pulling data from the Peloton API and decided it would be fun to try it out for myself.
-
-*Update: I did sell in my recent move cross-country. Don't think it will be the last I've seen of peloton though. 
+I was surprised to find that one of the most motivating aspects of the bike and the Peloton app was the data it provides about your workouts. On Reddit, I saw that some people were pulling data from the Peloton API and decided it would be fun to try it out for myself.
 
 ## The API
 
-In doing my research I discovered the API is documented very thoroughly on [Swagger](https://app.swaggerhub.com/apis/DovOps/peloton-unofficial-api/0.2.3#/)! I was not familiar with Swagger and this was a great resource for learning about the API. 
+During some initial research I found that the API is documented very thoroughly on [Swagger](https://app.swaggerhub.com/apis/DovOps/peloton-unofficial-api/0.2.3#/)! I was not familiar with Swagger and this was a great resource for learning about the API and publically available data. 
 
 ## Getting a workout
 
-Each request for your own Peloton data requires an expirable `session_id`. Here is the request I am making to get mine. The `session_id` in the response is used in all subsequent requests as part of a `cookie` header.
+### Authentication 
+
+Each request for your own Peloton data requires an expirable `session_id`. You can make a request to retrieve the `session_id` using their authentication endpoint with your Peloton username and password. It is then as part of the `cookie` header in every subsequent request.
 
 ```javascript
 export const authenticate = async () => {
@@ -30,7 +30,7 @@ export const authenticate = async () => {
 }
 ```
 
-Right now, I am just rendering the most recent 15 workouts on my <a href="workouts">workouts</a> page. I might get a little more fancy with this in the future. The request requires your user id as a path parameter, and the `session_id` from the authentication data we fetched above.
+Right now, I am just rendering the most recent 15 workouts on my <a href="workouts">workouts</a> page. This page isn't fancy, half to play around with the API and half to learn some of the basics of TailwindCSS. The request requires your Pelton user id as a path parameter, and the `session_id` in the `cookie` header from the authentication data we fetched above.
 
 ```javascript
 const workouts = (userId, limit = 15, page = 0) =>
