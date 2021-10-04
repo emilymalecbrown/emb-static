@@ -8,8 +8,8 @@ export default () => (
     </Link>
 
     <nav className="flex items-center">
-      <NavItem href={'/about'}>About</NavItem>
-      <NavItem href={'/posts'}>Posts</NavItem>
+      {/* <NavItem href={'/about'}>About</NavItem>
+      <NavItem href={'/posts'}>Posts</NavItem> */}
       <NavItem href={'https://www.github.com/emilymalecbrown'}>
         <Image src={'/images/github.png'} width={20} height={20} />
       </NavItem>

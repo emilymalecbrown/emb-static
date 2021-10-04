@@ -8,7 +8,7 @@ function Layout({ children }) {
     <>
       <Head>
         <link rel="icon" href="/favicon.ico" />
-        <meta name="description" content="Emily Malec Brown personal blog." />
+        <meta name="description" content={siteTitle} />
         <meta property="og:image" />
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />

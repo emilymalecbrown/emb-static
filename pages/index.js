@@ -11,17 +11,13 @@ export default function Home({ allPostsData }) {
     <div className="max-w-full mb-16 prose">
       <p>Hi, I'm Emily. 👋</p>
       <p>
-        I am currently employed as Senior Software Engineer at{' '}
-        <a className="underline" href={'https://www.hopper.com/'}>
-          Hopper, Inc
-        </a>
-        . I don't tweet, but I'm coming around to blogging.
+        I am currently employed as Software Engineer at Google.
       </p>
-      <hr className="my-8" />
+      {/* <hr className="my-8" />
       <h2 className="text-lg my-4">Recent blog posts</h2>
       <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-4">
         {renderRecentPosts()}
-      </div>
+      </div> */}
     </div>
   )
 }
